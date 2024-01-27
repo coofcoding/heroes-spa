@@ -3,7 +3,7 @@ import { Link, NavLink } from 'react-router-dom';
 
 export const Navbar = () => {
     return (
-        <nav className="bg-white border border-gray-200 gap-4 flex justify-between items-center text-base py-2 px-10 font-semibold">
+        <nav className="bg-white border border-gray-200 gap-4 flex justify-between items-center text-sm py-2 px-10 font-bold">
 
             <Link
                 className='font-["Consolas"] text-lg flex items-center gap-3 text-blue-600 hover:text-blue-500 py-2'
@@ -18,18 +18,26 @@ export const Navbar = () => {
 
             <div className='flex gap-3'>
                 <NavLink
-                    className={ ({isActive}) => `border border-slate-300 py-2 px-6 w-32 text-center rounded-full hover:border-blue-500 hover:text-blue-600 ${(isActive) ? 'text-blue-600 border-blue-500 bg-blue-100 shadow-md shadow-blue-200' : 'text-slate-400'}` }
+                    className={ ({isActive}) => `border py-2 px-6 w-32 text-center rounded-full hover:border-blue-500 hover:text-blue-600 ${(isActive) ? 'text-blue-600 border-blue-500 bg-blue-100 shadow-md shadow-blue-200' : 'text-slate-400 border-slate-300'}` }
                     to="/marvel"
                 >
                     marvel
                 </NavLink>
 
                 <NavLink
-                    className={ ({isActive}) => `border border-slate-300 py-2 px-6 w-32 text-center rounded-full hover:border-blue-500 hover:text-blue-600 ${(isActive) ? 'text-blue-600 border-blue-500 bg-blue-100 shadow-md shadow-blue-200' : 'text-slate-400'}` }
+                    className={ ({isActive}) => `border py-2 px-6 w-32 text-center rounded-full hover:border-blue-500 hover:text-blue-600 ${(isActive) ? 'text-blue-600 border-blue-500 bg-blue-100 shadow-md shadow-blue-200' : 'text-slate-400 border-slate-300'}` }
                     to="/dc"
                 >
                     dc
                 </NavLink>
+
+                <NavLink
+                    className={ ({isActive}) => `border py-2 px-6 w-32 text-center rounded-full hover:border-blue-500 hover:text-blue-600 ${(isActive) ? 'text-blue-600 border-blue-500 bg-blue-100 shadow-md shadow-blue-200' : 'text-slate-400 border-slate-300'}` }
+                    to="/search"
+                >
+                    search
+                </NavLink>
+
                 <Link
                     className="border border-red-500 py-2 px-6 w-32 text-center rounded-full text-red-500 hover:bg-red-100"
                     to="/login"
