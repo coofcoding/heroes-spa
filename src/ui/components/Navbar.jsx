@@ -76,14 +76,14 @@ export const Navbar = () => {
 
             <div className='flex gap-3'>
                 <NavLink
-                    className={({ isActive }) => `border py-2 px-6 w-24 text-center rounded-full hover:border-indigo-500 hover:text-indigo-600 ${(isActive) ? 'text-indigo-600 border-indigo-500 bg-indigo-200 shadow-md shadow-indigo-200' : 'text-slate-400 border-slate-300'}`}
+                    className={({ isActive }) => `border py-2 px-6 w-24 text-center rounded-md hover:border-indigo-500 hover:text-indigo-600 ${(isActive) ? 'text-indigo-600 border-indigo-500 bg-indigo-200 shadow-md shadow-indigo-200' : 'text-slate-400 border-slate-300'}`}
                     to="/marvel"
                 >
                     marvel
                 </NavLink>
 
                 <NavLink
-                    className={({ isActive }) => `border py-2 px-6 w-24 text-center rounded-full hover:border-indigo-500 hover:text-indigo-600 ${(isActive) ? 'text-indigo-600 border-indigo-500 bg-indigo-200 shadow-md shadow-indigo-200' : 'text-slate-400 border-slate-300'}`}
+                    className={({ isActive }) => `border py-2 px-6 w-24 text-center rounded-md hover:border-indigo-500 hover:text-indigo-600 ${(isActive) ? 'text-indigo-600 border-indigo-500 bg-indigo-200 shadow-md shadow-indigo-200' : 'text-slate-400 border-slate-300'}`}
                     to="/dc"
                 >
                     dc
