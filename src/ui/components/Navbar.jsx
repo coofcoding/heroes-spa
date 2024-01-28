@@ -1,17 +1,19 @@
-import { useState } from 'react';
 import { useNavigate, Link, NavLink } from 'react-router-dom';
 
 import Swal from 'sweetalert2'
 import withReactContent from 'sweetalert2-react-content'
+import { useForm } from '../../hooks/useForm';
 
 const MySwal = withReactContent(Swal)
 
 
 export const Navbar = () => {
 
-    const [search, setSearch] = useState('');
+    const { searchText, onInputChange } = useForm({
+        searchText: ''
+    });
 
-    const navigate = useNavigate()
+    const navigate = useNavigate();
 
     const handleLogout = () => {
         navigate('/login', {
@@ -21,23 +23,23 @@ export const Navbar = () => {
 
     const handleSubmit = (event) => {
 
+
         event.preventDefault();
 
-        if (search.length <= 2) {
+        if (searchText.trim().length <= 2) {
             MySwal.fire({
                 icon: "error",
                 title: "Oh, oh!",
-                text: "Por favor escriba por lo menos una palabra",
+                text: "Please insert at least one word",
                 showConfirmButton: false,
                 timer: 3000
             })
 
             return;
         };
-    }
 
-    const onFormChange = ({ target }) => {
-        setSearch(target.value);
+        navigate(`search?q=${searchText}`);
+
     }
 
     return (
@@ -69,8 +71,9 @@ export const Navbar = () => {
                     id="search-navbar"
                     className="block w-full p-2 ps-10 text-sm text-gray-600 border border-gray-300 outline-none rounded-lg ring-1 ring-white bg-gray-50 focus:ring-indigo-500 focus:border-indigo-500"
                     placeholder="Search..."
-                    value={search}
-                    onChange={onFormChange}
+                    name='searchText'
+                    value={searchText}
+                    onChange={onInputChange}
                 />
             </form>
 
