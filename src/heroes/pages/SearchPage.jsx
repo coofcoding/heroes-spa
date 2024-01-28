@@ -1,12 +1,15 @@
 import { useLocation } from "react-router-dom";
 import { HeroCard } from "../components";
 import queryString from 'query-string';
+import { getHeroesByName } from "../helpers";
 
 export const SearchPage = () => {
 
   const location = useLocation();
 
   const { q = '' } = queryString.parse(location.search);
+
+  const heroes = getHeroesByName(q);
 
   return (
     <>
@@ -26,7 +29,17 @@ export const SearchPage = () => {
         <p className="font-light">There's no results with <span className="font-medium">{q}</span></p>
       </div>
 
-      {/* <HeroCard/> */}
+      <div className="flex gap-4 flex-wrap">
+        {
+          heroes.map(hero => (
+            <HeroCard
+              key={hero.id}
+              id={hero.id}
+              superhero={hero.superhero}
+            />
+          ))
+        }
+      </div>
     </>
   )
 }

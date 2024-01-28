@@ -66,6 +66,14 @@ export const Navbar = () => {
                     </svg>
                     <span className="sr-only">Search icon</span>
                 </div>
+                <div className="absolute inset-y-0 right-0 flex items-center pointer-events-none pe-0.5">
+                    <div className='bg-slate-200 p-2 rounded-md border border-slate-400'>
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-4 h-4 text-slate-600">
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M9 15 3 9m0 0 6-6M3 9h12a6 6 0 0 1 0 12h-3" />
+                        </svg>
+                    </div>
+                    <span className="sr-only">Search icon</span>
+                </div>
                 <input
                     type="text"
                     id="search-navbar"
@@ -75,6 +83,7 @@ export const Navbar = () => {
                     value={searchText}
                     onChange={onInputChange}
                 />
+
             </form>
 
             <div className='flex gap-3'>
@@ -105,7 +114,7 @@ export const Navbar = () => {
                             <span className="block text-sm  text-gray-500 truncate">coofcoding@gmail.com</span>
                         </div>
                         <ul className="py-2" aria-labelledby="user-menu-button">
-                            <Link to="/login" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" onClick={ handleLogout }>Sign out</Link>
+                            <Link to="/login" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" onClick={handleLogout}>Sign out</Link>
                         </ul>
                     </div>
                 </div>
