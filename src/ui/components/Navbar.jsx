@@ -12,7 +12,7 @@ const MySwal = withReactContent(Swal)
 
 export const Navbar = () => {
 
-    const { user } = useContext(AuthContext);
+    const { user, logout } = useContext(AuthContext);
 
     const { searchText, onInputChange } = useForm({
         searchText: ''
@@ -21,6 +21,9 @@ export const Navbar = () => {
     const navigate = useNavigate();
 
     const handleLogout = () => {
+
+        logout();
+
         navigate('/login', {
             replace: true
         });

@@ -9,7 +9,7 @@ export const LoginPage = () => {
 
   const handleLogin = () => {
 
-    login('Kevin Lopez');    
+    login('coofcoding');    
 
     navigate('/', {
       replace: true
