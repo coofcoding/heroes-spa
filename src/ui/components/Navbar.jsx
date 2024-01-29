@@ -1,13 +1,18 @@
 import { useNavigate, Link, NavLink } from 'react-router-dom';
+import { Avatar, Dropdown, DropdownDivider, DropdownHeader, DropdownItem } from 'flowbite-react';
 
 import Swal from 'sweetalert2'
 import withReactContent from 'sweetalert2-react-content'
 import { useForm } from '../../hooks/useForm';
+import { useContext } from 'react';
+import { AuthContext } from '../../auth/context/AuthContext';
 
 const MySwal = withReactContent(Swal)
 
 
 export const Navbar = () => {
+
+    const { user } = useContext(AuthContext);
 
     const { searchText, onInputChange } = useForm({
         searchText: ''
@@ -102,22 +107,19 @@ export const Navbar = () => {
                 </NavLink>
 
                 {/* Dropdown menu */}
-                <div className="flex items-center md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
-                    <button type="button" className="flex text-sm bg-gray-800 rounded-full md:me-0 focus:ring-4 focus:ring-gray-300" id="user-menu-button" aria-expanded="false" data-dropdown-toggle="user-dropdown" data-dropdown-placement="bottom">
-                        <span className="sr-only">Open user menu</span>
-                        <img className="w-8 h-8 rounded-full" src="/assets/mylogo.png" alt="user photo" />
-                    </button>
-                    {/* Dropdown menu */}
-                    <div className="z-50 hidden my-4 text-base list-none bg-white divide-y divide-gray-100 rounded-lg shadow" id="user-dropdown">
-                        <div className="px-4 py-3">
-                            <span className="block text-sm text-gray-900">Kevin Lopez</span>
-                            <span className="block text-sm  text-gray-500 truncate">coofcoding@gmail.com</span>
-                        </div>
-                        <ul className="py-2" aria-labelledby="user-menu-button">
-                            <Link to="/login" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" onClick={handleLogout}>Sign out</Link>
-                        </ul>
-                    </div>
-                </div>
+                <Dropdown
+                    label={
+                        <Avatar alt="User settings" img="/assets/mylogo.png" rounded>
+                            <div className="space-y-1 font-medium">
+                                <div>{ user }</div>
+                            </div>
+                        </Avatar>
+                    }
+                    arrowIcon={false}
+                    inline
+                >
+                    <DropdownItem><Link to="/login" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" onClick={handleLogout}>Sign out</Link></DropdownItem>
+                </Dropdown>
             </div>
         </nav>
     )
