@@ -112,7 +112,7 @@ export const Navbar = () => {
                 {/* Dropdown menu */}
                 <Dropdown
                     label={
-                        <Avatar alt="User settings" img="/assets/mylogo.png" rounded>
+                        <Avatar alt="User settings" img="/src/assets/mylogo.png" rounded>
                             <div className="space-y-1 font-medium">
                                 <div>{ user }</div>
                             </div>

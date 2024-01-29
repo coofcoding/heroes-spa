@@ -10,7 +10,7 @@ export const Hero = () => {
 
   const { superhero, publisher, alter_ego, first_appearance, characters } = useMemo( () => getHeroeById(id), [ id ] );
 
-  const heroImageURL = `/assets/heroes/${id}.jpg`;
+  const heroImageURL = `/heroes/${id}.jpg`;
 
   if (!superhero) {
     return <Navigate to="/marvel" />
