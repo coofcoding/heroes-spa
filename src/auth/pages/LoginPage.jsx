@@ -9,9 +9,11 @@ export const LoginPage = () => {
 
   const handleLogin = () => {
 
-    login('coofcoding');    
+    const lastpath = localStorage.getItem('lastpath') || '/';
 
-    navigate('/', {
+    login('coofcoding');
+
+    navigate(lastpath, {
       replace: true
   })
   }
