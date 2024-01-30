@@ -12,7 +12,7 @@ export const HeroCard = ({ id, superhero }) => {
             </div>
             <span className="font-bold text-slate-700 text-xl">{superhero}</span>
 
-            <Link to={`/hero/${id}`} className="mt-3 bg-gradient-to-r from-indigo-500 to-blue-400 hover:from-red-500 hover:to-pink-500 w-fit py-2 px-4 text-xs font-normal text-white rounded-md">
+            <Link to={`/heroes-spa/hero/${id}`} className="mt-3 bg-gradient-to-r from-indigo-500 to-blue-400 hover:from-red-500 hover:to-pink-500 w-fit py-2 px-4 text-xs font-normal text-white rounded-md">
                 see more...
             </Link>
 

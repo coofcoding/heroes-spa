@@ -9,7 +9,7 @@ export const LoginPage = () => {
 
   const handleLogin = () => {
 
-    const lastpath = localStorage.getItem('lastpath') || '/';
+    const lastpath = localStorage.getItem('lastpath') || '/heroes-app/';
 
     login('coofcoding');
 

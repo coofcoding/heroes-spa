@@ -9,11 +9,14 @@ export const PrivateRoute = ({ children }) => {
     const { pathname, search } = useLocation();
 
     const lastpath = `${pathname}${search}`;
+
+    console.log(lastpath)
+
     localStorage.setItem('lastpath', lastpath);
 
     return (
         logged 
         ? children
-        : <Navigate to="/login"/>
+        : <Navigate to="/heroes-spa/login"/>
     )
 }

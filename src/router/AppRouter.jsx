@@ -10,13 +10,13 @@ export const AppRouter = () => {
     <>
       <Routes>
 
-        <Route path='login' element={
+        <Route path='/heroes-spa/login' element={
           <PublicRoute>
             <LoginPage />
           </PublicRoute>
         } />
 
-        <Route path='/*' element={
+        <Route path='/heroes-spa/*' element={
           <PrivateRoute>
             <HeroesRoutes />
           </PrivateRoute>

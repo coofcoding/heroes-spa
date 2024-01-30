@@ -13,7 +13,7 @@ export const Hero = () => {
   const heroImageURL = `/heroes-spa/heroes/${id}.jpg`;
 
   if (!superhero) {
-    return <Navigate to="/marvel" />
+    return <Navigate to="/heroes-spa/marvel" />
   }
 
   const navigate = useNavigate();
