@@ -10,8 +10,6 @@ export const PrivateRoute = ({ children }) => {
 
     const lastpath = `${pathname}${search}`;
 
-    console.log(lastpath)
-
     localStorage.setItem('lastpath', lastpath);
 
     return (
