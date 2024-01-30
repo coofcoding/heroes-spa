@@ -24,7 +24,7 @@ export const Navbar = () => {
 
         logout();
 
-        navigate('/heroes-spa/login', {
+        navigate('/login', {
             replace: true
         });
     }
@@ -46,7 +46,7 @@ export const Navbar = () => {
             return;
         };
 
-        navigate(`/heroes-spa/search?q=${searchText}`);
+        navigate(`/search?q=${searchText}`);
 
     }
 
@@ -55,7 +55,7 @@ export const Navbar = () => {
 
             <Link
                 className='font-["Consolas"] text-lg flex items-center gap-3 text-indigo-600 hover:text-indigo-500 py-2'
-                to="/heroes-spa/marvel"
+                to="/marvel"
             >
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-7 h-7">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M12 6.042A8.967 8.967 0 0 0 6 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 0 1 6 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 0 1 6-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0 0 18 18a8.967 8.967 0 0 0-6 2.292m0-14.25v14.25" />
@@ -97,14 +97,14 @@ export const Navbar = () => {
             <div className='flex gap-3'>
                 <NavLink
                     className={({ isActive }) => `border py-2 px-6 w-24 text-center rounded-md hover:border-indigo-500 hover:text-indigo-600 ${(isActive) ? 'text-indigo-600 border-indigo-500 bg-indigo-200 shadow-md shadow-indigo-200' : 'text-slate-400 border-slate-300'}`}
-                    to="/heroes-spa/marvel"
+                    to="/marvel"
                 >
                     marvel
                 </NavLink>
 
                 <NavLink
                     className={({ isActive }) => `border py-2 px-6 w-24 text-center rounded-md hover:border-indigo-500 hover:text-indigo-600 ${(isActive) ? 'text-indigo-600 border-indigo-500 bg-indigo-200 shadow-md shadow-indigo-200' : 'text-slate-400 border-slate-300'}`}
-                    to="/heroes-spa/dc"
+                    to="/dc"
                 >
                     dc
                 </NavLink>
@@ -112,7 +112,7 @@ export const Navbar = () => {
                 {/* Dropdown menu */}
                 <Dropdown
                     label={
-                        <Avatar alt="User settings" img="/heroes-spa/mylogo.png" rounded>
+                        <Avatar alt="User settings" img="/mylogo.png" rounded>
                             <div className="space-y-1 font-medium">
                                 <div>{ user }</div>
                             </div>
