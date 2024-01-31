@@ -112,16 +112,17 @@ export const Navbar = () => {
                 {/* Dropdown menu */}
                 <Dropdown
                     label={
-                        <Avatar alt="User settings" img="/heroes-spa/mylogo.png" rounded>
+                        <Avatar alt="User settings" img="/mylogo.png" /* img="/heroes-spa/mylogo.png" <-- Production */ rounded>
                             <div className="space-y-1 font-medium">
                                 <div>{ user }</div>
                             </div>
                         </Avatar>
                     }
+                    aria-label='profile-button'
                     arrowIcon={false}
                     inline
                 >
-                    <DropdownItem><Link className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" onClick={handleLogout}>Sign out</Link></DropdownItem>
+                    <DropdownItem><Link data-testid='logout-btn' className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" onClick={handleLogout}>Sign out</Link></DropdownItem>
                 </Dropdown>
             </div>
         </nav>

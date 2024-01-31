@@ -1,7 +1,8 @@
-import { useLocation } from "react-router-dom";
-import { HeroCard } from "../components";
-import queryString from 'query-string';
-import { getHeroesByName } from "../helpers";
+import { useLocation } from 'react-router-dom';
+import { HeroCard } from '../components';
+// ! This importation make the test `debe de mostrar el login si no esta autenticado` in AppRouter.test.jsx fail
+// import queryString from 'query-string';
+import { getHeroesByName } from '../helpers';
 
 export const SearchPage = () => {
 

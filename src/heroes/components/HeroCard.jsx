@@ -2,7 +2,8 @@ import { Link } from "react-router-dom";
 
 export const HeroCard = ({ id, superhero }) => {
 
-    const heroImageURL = `/heroes-spa/heroes/${id}.jpg`;
+    // const heroImageURL = `/heroes-spa/heroes/${id}.jpg`; <-- Production
+    const heroImageURL = `/heroes/${id}.jpg`; // <-- Development version
 
     return (
         <div className="shadow-md p-6 rounded-md flex flex-col flex-wrap w-64 animate__animated animate__fadeIn">
