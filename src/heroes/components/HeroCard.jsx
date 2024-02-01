@@ -8,7 +8,7 @@ export const HeroCard = ({ id, superhero }) => {
     return (
         <div className="shadow-md p-6 rounded-md flex flex-col flex-wrap w-64 animate__animated animate__fadeIn">
             <div className='relative'>
-                <img src={heroImageURL} className="rounded-md mb-3 z-40" alt={id} />
+                <img src={heroImageURL} data-testid="hero-image" className="rounded-md mb-3 z-40" alt={id} />
                 <img src={heroImageURL} className="rounded-md mb-3 absolute top-0 -z-40 blur-sm" alt={id} />
             </div>
             <span className="font-bold text-slate-700 text-xl">{superhero}</span>

@@ -59,6 +59,7 @@ export const Hero = () => {
           <button
             className="bg-indigo-600 mt-4 text-white text-sm w-full h-12 rounded-md hover:bg-indigo-700"
             onClick={handleNavigateBar}
+            data-testid="goback-btn"
           >
             Go back
           </button>

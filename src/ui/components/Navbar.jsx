@@ -6,6 +6,8 @@ import withReactContent from 'sweetalert2-react-content'
 import { useForm } from '../../hooks/useForm';
 import { useContext } from 'react';
 import { AuthContext } from '../../auth/context/AuthContext';
+import { useLocation } from 'react-router-dom';
+import queryString from 'query-string';
 
 const MySwal = withReactContent(Swal)
 
@@ -14,8 +16,12 @@ export const Navbar = () => {
 
     const { user, logout } = useContext(AuthContext);
 
+    const location = useLocation();
+
+    const { q = '' } = queryString.parse(location.search);
+
     const { searchText, onInputChange } = useForm({
-        searchText: ''
+        searchText: q
     });
 
     const navigate = useNavigate();
@@ -30,7 +36,6 @@ export const Navbar = () => {
     }
 
     const handleSubmit = (event) => {
-
 
         event.preventDefault();
 
@@ -74,14 +79,14 @@ export const Navbar = () => {
                     </svg>
                     <span className="sr-only">Search icon</span>
                 </div>
-                <div className="absolute inset-y-0 right-0 flex items-center pointer-events-none pe-0.5">
+                <button data-testid="search-btn" className="absolute inset-y-0 right-0 flex items-center pointer-events-none pe-0.5">
                     <div className='bg-slate-200 p-2 rounded-md border border-slate-400'>
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-4 h-4 text-slate-600">
                             <path strokeLinecap="round" strokeLinejoin="round" d="M9 15 3 9m0 0 6-6M3 9h12a6 6 0 0 1 0 12h-3" />
                         </svg>
                     </div>
                     <span className="sr-only">Search icon</span>
-                </div>
+                </button>
                 <input
                     type="text"
                     id="search-navbar"
@@ -90,6 +95,7 @@ export const Navbar = () => {
                     name='searchText'
                     value={searchText}
                     onChange={onInputChange}
+                    data-testid='input-search'
                 />
 
             </form>
@@ -114,7 +120,7 @@ export const Navbar = () => {
                     label={
                         <Avatar alt="User settings" img="/mylogo.png" /* img="/heroes-spa/mylogo.png" <-- Production */ rounded>
                             <div className="space-y-1 font-medium">
-                                <div>{ user }</div>
+                                <div>{user}</div>
                             </div>
                         </Avatar>
                     }

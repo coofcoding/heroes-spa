@@ -3,7 +3,6 @@ import { AuthContext } from "../../../src/auth";
 import { MemoryRouter } from "react-router-dom";
 import { Navbar } from '../../../src/ui/components/Navbar';
 import { act } from "react-dom/test-utils";
-import { useNavigate } from "react-router-dom";
 
 const mockUseNavigate = jest.fn();
 
