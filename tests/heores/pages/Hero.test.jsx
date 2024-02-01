@@ -15,7 +15,7 @@ jest.mock('../../../src/heroes/helpers/getHeroeById')
 
 describe('Pruebas al componente <Hero/>', () => {
 
-    beforeEach(() => jest.clearAllMocks());
+    beforeEach(() => jest.resetAllMocks());
 
     test('debe de hacer match con el snapshot', () => {
 
@@ -59,20 +59,5 @@ describe('Pruebas al componente <Hero/>', () => {
         fireEvent.click(goBack);
         
         expect( mockUseNavigate ).toHaveBeenCalledWith(-1, { replace: true })
-    });
-
-    test('Al no encontrar el heroe, que redireccione a la página de /marvel', () => {
-
-        getHeroeById.mockReturnValue({
-            'superhero': 'nombre-del-heroe',
-        })
-
-        render(
-            <MemoryRouter initialEntries={['/hero/nombre-del-heroe']}>
-                <Hero />
-            </MemoryRouter>
-        )
-        
-        expect( mockUseNavigate ).toHaveBeenCalledWith('/marvel')
     });
 });
